@@ -16,9 +16,9 @@
             <tr>
                 <?php
                     if (isset($_GET['id'])) {
-                        $student_id = $_GET['id'];
+                        $order_id = $_GET['id'];
 
-                        $query = "SELECT * FROM student WHERE id = $student_id";
+                        $query = "SELECT * FROM order WHERE id = $order_id";
                         $view_students = mysqli_query($conn, $query);
 
                         while($row = $view_students->fetch_assoc()) {
