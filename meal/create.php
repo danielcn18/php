@@ -1,6 +1,6 @@
 <?php include "header.php" ?>
     
-    <form action="" method="post" style="width: 80%; margin: 2rem 10%;">
+    <form action="" method="post" style="width: 80%; margin: 2rem 10% 0 10%;">
         <div class="row">
             <div class="col mb-4">
                 <label for="firstname">Name:<span class="required">*</span></label>
@@ -17,9 +17,9 @@
         </div>
         <div class="form-group mb-4">
             <label for="street1">Delivery Address:<span class="required">*</span></label>
-            <input type="street1" class="form-control mb-4 form-o" id="street1" name="straddr" placeholder="Street Address" required>
+            <input type="street1" class="form-control mb-4 form-o" id="street1" name="streetaddress" placeholder="Street Address" required>
             <label for="street2">Delivery Address Line 2:</label>
-            <input type="street2" class="form-control form-o" id="street2" name="straddr2" placeholder="Street Address Line 2">
+            <input type="street2" class="form-control form-o" id="street2" name="streetaddress2" placeholder="Street Address Line 2">
         </div>
 
         <div class="row mb-4">
@@ -29,7 +29,7 @@
             </div>
             <div class="col">
                 <label for="zip">Zip:<span class="required">*</span></label>
-                <input type="number" class="form-control form-o" minlength="5" maxlength="5" name="zip" placeholder="Zip" required>
+                <input type="number" class="form-control form-o" maxlength="5" name="zip" placeholder="Zip" required>
             </div>
         </div>
         <div class="form-check">
@@ -77,38 +77,43 @@
         </div>
 
         <div class="text-center">
-            <button type="submit" class="btn btn-primary btn-lg bg-dark border-light">Add Order</button>
+            <input type="submit" name="create" class="btn btn-primary btn-lg bg-dark border-light" value="Add Order">
         </div>
 
     </form>
 
+    <div class="container text-center">
+        <a href="index.php" class="btn btn-warning mt-5 mb-5">Back</a>
+    </div>
+
 <?php
+
     // error here, the if statement isn't being called. 
     if (isset($_POST['create']) && !empty($_POST['create'])) {
         $name_pattern = "/^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$/";
-        $phone_pattern = "/^[1-9]\d{2}-\d{3}-\d{4}$/";
         $phone_pattern = "/^[1-9]\d{2}-\d{3}-\d{4}$/";
         $straddr_pattern = "/^\d{1,6}\040([A-Z]{1}[a-z]{1,}\040[A-Z]{1}[a-z]{1,})$/";
         $city_pattern = "/^([a-zA-Z\u0080-\u024F]+(?:. |-| |'))*[a-zA-Z\u0080-\u024F]*$/";
         $zip_pattern = "/^[0-9]{5}(?:-[0-9]{4})?$/";
 
-        $student_id = $_POST['id'];
-        $fname = $_POST['firstname'];
-        $lname = $_POST['lastname'];
+        // $student_id = $_POST['id'];
+        $fname = $_POST['fname'];
+        $lname = $_POST['lname'];
         $phone = $_POST['phone'];
         $straddr = $_POST['streetaddress'];
-        $straddr2 = $_POST['streeaddress2'];
+        $straddr2 = $_POST['streetaddress2'];
         $city = $_POST['city'];
         $zip = $_POST['zip'];
 
         if(true) {
-            echo $student_id;
-            echo "$fname";
-            echo "$lname";
-            echo "$phone";
-            echo "$straddr";
-            echo "$straddr2";
-            echo "$city";
+            // echo $student_id;
+            echo "$fname<br>";
+            echo "$lname<br>";
+            echo "$phone<br>";
+            echo "$straddr<br>";
+            echo "$straddr2<br>";
+            // echo gettype($straddr2);
+            echo "$city<br>";
             echo "$zip";
         }
 
@@ -117,11 +122,10 @@
             preg_match($name_pattern, $fname) &&
             preg_match($name_pattern, $lname) &&
             preg_match($phone_pattern, $phone) &&
-            preg_match($straddr_pattern, $straddr) &&
-            preg_match($straddr_pattern, $straddr2)
+            preg_match($straddr_pattern, $straddr)
         ) {
-
-            $query = "INSERT INTO order(id, firstname, lastname, phone, streetaddress, streetaddress2, city, zip) VALUES('{$student_id}', '{$fname}', '{$lname}', '{$phone}', '{$straddr}', '{$straddr2}', '{$city}', '{$zip}')";
+            if($straddr2 == "") $straddr2 = NULL;
+            $query = "INSERT INTO orders(firstname, lastname, phone, streetaddress, streetaddress2, city, zip) VALUES('{$fname}', '{$lname}', '{$phone}', '{$straddr}', '{$straddr2}', '{$city}', '{$zip}')";
             $add_order = mysqli_query($conn, $query);
 
             if (!$add_order) {
@@ -134,7 +138,7 @@
         } else {
             echo "<div class='container text-danger'>Field Inputs Are Not Acceptable</div>";
         }
-    }   
+    }
 
     include "footer.php" 
 ?>

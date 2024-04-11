@@ -4,7 +4,7 @@
 <?php 
     if(isset($_GET['id'])) {
         $order_id = $_GET['id'];
-        $query = "DELETE FROM order WHERE id = {$order_id}";
+        $query = "DELETE FROM orders WHERE id = {$order_id}";
         $delete_query = mysqli_query($conn, $query);
         header("Location: index.php");
     }
