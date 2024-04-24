@@ -18,8 +18,8 @@
         <div class="form-group mb-4">
             <label for="street1">Delivery Address:<span class="required">*</span></label>
             <input type="street1" class="form-control mb-4 form-o" id="street1" name="streetaddress" placeholder="Street Address" required>
-            <label for="street2">Delivery Address Line 2:</label>
-            <input type="street2" class="form-control form-o" id="street2" name="streetaddress2" placeholder="Street Address Line 2">
+            <!-- <label for="street2">Delivery Address Line 2:</label>
+            <input type="street2" class="form-control form-o" id="street2" name="streetaddress2" placeholder="Street Address Line 2"> -->
         </div>
 
         <div class="row mb-4">
@@ -32,48 +32,54 @@
                 <input type="number" class="form-control form-o" maxlength="5" name="zip" placeholder="Zip" required>
             </div>
         </div>
-        <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
 
         <div class="card d-flex flex-row w-full mb-4" style="padding: 1rem; border-radius: 1rem;"> 
-            <div style="width: 30rem; height: 15rem;">
-                <img style="object-fit: cover; height: 100%; width: 100%; border-radius: 0.5rem;" src="./image1.jpg" alt="image" class="img-thumbnail">
-            </div>
+            <div style="width: 30rem; height: 15rem;"> 
+                <img style="height: 100%; object-fit: cover; width: 100%; border-radius: 0.5rem;" src="./image1.jpg" alt="image" class="img-thumbnail">
+            </div> 
             <div class="card-body"> 
-                <h5 class="card-title text-right">Monday</h5>
-                <p class="card-text">Smoked Honey Maple Ham</p>
-                <h4 class="card-title">$15.00</h4>
-                <p class="card-text">Quantity</p>
-                <input style="height: 2.2rem;" type="number" value="1">
-                <button type="button" class="btn btn-primary bg-primary" style="background-image: linear-gradient(to right, #08b2e3, #7c98b3); color: #fff; border-color: #7ee8fa;">Add To Cart</button>
-            </div>
+                <h5 class="card-title text-right">Monday</h5> 
+                <p class="card-text">Smoked Honey Maple Ham</p> 
+                <h4 class="card-title">15.00</h4> 
+                <p class="card-text">Quantity</p> 
+                <!-- Use input names like 'item[]', 'quantity[]', and 'price[]' to gather data --> 
+                <input type="hidden" name="item[]" value="Smoked Honey Maple Ham"> 
+                <input type="hidden" name="price[]" value="15.00"> 
+                <input style="height: 2.2rem;" type="number" name="quantity[]" value="0" min="0" max="100"> 
+                <!-- <button type="button" class="btn btn-primary bg-primary" style="background-image: linear-gradient(to right, #08b2e3, #7c98b3); color: #fff; border-color: #7ee8fa;">Add To Cart</button>  -->
+            </div> 
         </div>
         <div class="card d-flex flex-row w-full mb-4" style="padding: 1rem; border-radius: 1rem;"> 
-            <div style="width: 30rem; height: 15rem;">
-                <img style="object-fit: cover; width: 100%; height: 100%; border-radius: 0.5rem;" src="./image2.jpg" alt="image" class="img-thumbnail">
-            </div>
-            <div class="card-body">
-                <h5 class="card-title text-right">Tuesday</h5>
-                <p class="card-text">Lemon Bar</p>
-                <h4 class="card-title">$4.50</h4>
-                <p class="card-text">Quantity</p>
-                <input style="height: 2.2rem;" type="number" value="1">
-                <button type="button" class="btn btn-primary bg-primary" style="background-image: linear-gradient(to right, #08b2e3, #7c98b3); color: #fff; border-color: #7ee8fa;">Add To Cart</button>
-            </div>
+            <div style="width: 30rem; height: 15rem;"> 
+                <img style="height: 100%; object-fit: cover; width: 100%; border-radius: 0.5rem;" src="./image2.jpg" alt="image" class="img-thumbnail">
+            </div> 
+            <div class="card-body"> 
+                <h5 class="card-title text-right">Tuesday</h5> 
+                <p class="card-text">Lemon Bar</p> 
+                <h4 class="card-title">$4.50</h4> 
+                <p class="card-text">Quantity</p> 
+                <!-- Use input names like 'item[]', 'quantity[]', and 'price[]' to gather data --> 
+                <input type="hidden" name="item[]" value="Lemon Bar"> 
+                <input type="hidden" name="price[]" value="4.50"> 
+                <input style="height: 2.2rem;" type="number" name="quantity[]" value="0" min="0" max="100"> 
+                <!-- <button type="button" class="btn btn-primary bg-primary" style="background-image: linear-gradient(to right, #08b2e3, #7c98b3); color: #fff; border-color: #7ee8fa;">Add To Cart</button>  -->
+            </div> 
         </div>
         <div class="card d-flex flex-row w-full mb-4" style="padding: 1rem; border-radius: 1rem;"> 
-            <div style="width: 30rem; height: 15rem;">
-                <img style="height: 100%; object-fit: cover; width: 100%; border-radius: 0.5rem;" src="./image3.jpg" alt="image" class="img-thumbnail"></div>
-            <div class="card-body">
-                <h5 class="card-title text-right">Wednesday</h5>
-                <p class="card-text">Beef Stroganoff</p>
-                <h4 class="card-title">$20.00</h4>
-                <p class="card-text">Quantity</p>
-                <input style="height: 2.2rem;" type="number" value="1">
-                <button type="button" class="btn btn-primary bg-primary" style="background-image: linear-gradient(to right, #08b2e3, #7c98b3); color: #fff; border-color: #7ee8fa;">Add To Cart</button>
-            </div>
+            <div style="width: 30rem; height: 15rem;"> 
+                <img style="height: 100%; object-fit: cover; width: 100%; border-radius: 0.5rem;" src="./image3.jpg" alt="image" class="img-thumbnail">
+            </div> 
+            <div class="card-body"> 
+                <h5 class="card-title text-right">Wednesday</h5> 
+                <p class="card-text">Beef Stroganoff</p> 
+                <h4 class="card-title">$20.00</h4> 
+                <p class="card-text">Quantity</p> 
+                <!-- Use input names like 'item[]', 'quantity[]', and 'price[]' to gather data --> 
+                <input type="hidden" name="item[]" value="Beef Stroganoff"> 
+                <input type="hidden" name="price[]" value="20.00"> 
+                <input style="height: 2.2rem;" type="number" name="quantity[]" value="0" min="0" max="100"> 
+                <!-- <button type="button" class="btn btn-primary bg-primary" style="background-image: linear-gradient(to right, #08b2e3, #7c98b3); color: #fff; border-color: #7ee8fa;">Add To Cart</button>  -->
+            </div> 
         </div>
 
         <div class="text-center">
@@ -101,9 +107,24 @@
         $lname = $_POST['lname'];
         $phone = $_POST['phone'];
         $straddr = $_POST['streetaddress'];
-        $straddr2 = $_POST['streetaddress2'];
+        // $straddr2 = $_POST['streetaddress2'];
         $city = $_POST['city'];
         $zip = $_POST['zip'];
+        
+        
+        $items = [];
+        if (isset($_POST['item']) && isset($_POST['quantity']) && isset($_POST['price'])) {
+            $items = array_map(function ($item, $quantity, $price) {
+                return [
+                    'name' => $item,
+                    'quantity' => $quantity,
+                    'price' => $price
+                ];
+            }, $_POST['item'], $_POST['quantity'], $_POST['price']);
+        }
+        
+        // Convert the array of items to JSON format
+        $itemsJson = json_encode($items);
 
         if(true) {
             // echo $student_id;
@@ -111,21 +132,21 @@
             echo "$lname<br>";
             echo "$phone<br>";
             echo "$straddr<br>";
-            echo "$straddr2<br>";
-            // echo gettype($straddr2);
+            // echo "$straddr2<br>";
             echo "$city<br>";
-            echo "$zip";
+            echo "$zip<br>";
+            echo "$itemsJson";
         }
 
         if (
-            // filter_var($email, FILTER_VALIDATE_EMAIL) &&
+            // filter_var($email, FILTER_VALIDATE_EMAIL) && 
             preg_match($name_pattern, $fname) &&
             preg_match($name_pattern, $lname) &&
             preg_match($phone_pattern, $phone) &&
             preg_match($straddr_pattern, $straddr)
         ) {
-            if($straddr2 == "") $straddr2 = NULL;
-            $query = "INSERT INTO orders(firstname, lastname, phone, streetaddress, streetaddress2, city, zip) VALUES('{$fname}', '{$lname}', '{$phone}', '{$straddr}', '{$straddr2}', '{$city}', '{$zip}')";
+            $query = "INSERT INTO orders(firstname, lastname, phone, streetaddress, city, zip, items) 
+                    VALUES('{$fname}', '{$lname}', '{$phone}', '{$straddr}', '{$city}', '{$zip}', '{$itemsJson}')";
             $add_order = mysqli_query($conn, $query);
 
             if (!$add_order) {

@@ -18,9 +18,9 @@
     lastname VARCHAR(30) NOT NULL,
     phone VARCHAR(12) NOT NULL,
     streetaddress VARCHAR(30) NOT NULL,
-    streetaddress2 VARCHAR(30),
     city VARCHAR(30) NOT NULL,
     zip INT(5) NOT NULL,
+    items JSON,
     reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
   )";
 

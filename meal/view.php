@@ -11,7 +11,6 @@
                 <th scope="col">Last Name</th>
                 <th scope="col">Phone Number</th>
                 <th scope="col">Str. Address</th>
-                <th scope="col">Str. Address Line 2</th>
                 <th scope="col">City</th>
                 <th scope="col">Zip</th>
             </tr>
@@ -31,16 +30,15 @@
                             $lname = $row['lastname'];
                             $phone = $row['phone'];
                             $strA = $row['streetaddress'];
-                            $strA2 = $row['streetaddress2'];
                             $city = $row['city'];
                             $zip = $row['zip'];
+                            
                             echo "<tr >";
                             echo " <th scope='row' >{$order_id}</th>";
                             echo " <td > {$fname}</td>";
                             echo " <td > {$lname}</td>";
                             echo " <td > {$phone}</td>";
                             echo " <td > {$strA}</td>";
-                            echo " <td > {$strA2}</td>";
                             echo " <td > {$city}</td>";
                             echo " <td > {$zip}</td>";
                             echo "</tr>";

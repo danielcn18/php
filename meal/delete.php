@@ -12,7 +12,7 @@
 
 <!-- Back Button -->
 <div class="container text-center mt-5">
-    <a href="home.php" class="btn btn-warning mt-5">Back</a>
+    <a href="index.php" class="btn btn-warning mt-5">Back</a>
 </div>
 
 <?php include "footer.php" ?>
