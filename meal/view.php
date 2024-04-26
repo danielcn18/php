@@ -13,6 +13,7 @@
                 <th scope="col">Str. Address</th>
                 <th scope="col">City</th>
                 <th scope="col">Zip</th>
+                <th scope="col">Items</th>
             </tr>
         </thead>
         <tbody>
@@ -32,7 +33,9 @@
                             $strA = $row['streetaddress'];
                             $city = $row['city'];
                             $zip = $row['zip'];
-                            
+                            $items = $row['items'];
+
+
                             echo "<tr >";
                             echo " <th scope='row' >{$order_id}</th>";
                             echo " <td > {$fname}</td>";
@@ -41,6 +44,7 @@
                             echo " <td > {$strA}</td>";
                             echo " <td > {$city}</td>";
                             echo " <td > {$zip}</td>";
+                            echo " <td > {$items}</td>";
                             echo "</tr>";
                         }
                     }
