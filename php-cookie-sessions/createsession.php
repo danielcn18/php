@@ -9,4 +9,4 @@
 
 <h1>Welcome</h1>
 <p><?= $message; ?></p>
-<p><a href="createsession.php">Refresh this page</a> to see the page views increase.</p>
+<p><a href="createsession.php">Refresh this page</a> to see the page views increase.</p
